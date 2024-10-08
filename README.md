@@ -10,7 +10,7 @@ Este proyecto mide la distancia utilizando un sensor conectado a un **Arduino**,
 - **SQLite** para la base de datos.
 - **Permisos de escritura** en la carpeta `/var/www/html` (en sistemas Linux).
 
-##Instalación y Configuración
+## Instalación y Configuración
 
 ### 1. Clonar el Repositorio
 
@@ -45,7 +45,7 @@ Dado que el proyecto está ubicado en la carpeta `/var/www/html`, asigna los per
 ```bash
 sudo chmod -R 755 /var/www/html/sensor-flaskapp
 ```
-##Ejecución
+## Ejecución
 
 ### 1. Ejecutar el Servidor
 
@@ -62,7 +62,7 @@ Los datos del sensor se visualizarán en tiempo real en una gráfica en la pági
 
 - **Página Principal**: `http://tu-ip:5000/`
 
-## 🛠 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```bash
 sensor-datos-web/
@@ -87,6 +87,6 @@ Para asegurarte de que todo está funcionando correctamente, sigue estos pasos:
 - **Recuerda modificar el puerto serial** en `app.py` según tu configuración.
 - El proyecto está diseñado para funcionar en sistemas Linux, pero debería ser fácilmente adaptable a otros entornos.
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está bajo la [Licencia MIT](LICENSE).
