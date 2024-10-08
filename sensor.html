@@ -37,8 +37,29 @@
         <div id="grafica">
             <canvas id="myChart"></canvas>
         </div>
+        <h2 class="mt-5">Datos de Mediciones</h2>
+        <div class="scrollable-table">
+            <table class="table table-bordered mt-3" id="datosTabla">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tiempo (s)</th>
+                        <th>Distancia (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dato in datos %}
+                    <tr>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.tiempo }}</td>
+                        <td>{{ dato.distancia }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a href="/" class="btn btn-primary">Regresar</a>
     </div>
-
     <script>
         const ctx = document.getElementById('myChart').getContext('2d');
         const labels = [];
@@ -82,6 +103,17 @@
             labels.push(data.tiempo);
             distances.push(data.distancia);
             myChart.update();
+            const tableBody = document.querySelector('#datosTabla tbody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${tableBody.children.length + 1}</td>  <!-- Asigna un ID automáticamente -->
+                <td>${data.tiempo}</td>
+                <td>${data.distancia}</td>
+            `;
+            tableBody.appendChild(newRow);
+        };
+        eventSource.onerror = function(event) {
+            console.error("Error en la conexión SSE:", event);
         };
     </script>
 </body>
