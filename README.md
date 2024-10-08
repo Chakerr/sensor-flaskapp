@@ -1,4 +1,4 @@
-#Proyecto: Sensor de Distancia con Visualización en Tiempo Real
+# Proyecto: Sensor de Distancia con Visualización en Tiempo Real
 
 Este proyecto mide la distancia utilizando un sensor conectado a un **Arduino**, visualiza los datos en tiempo real mediante una **página web**, y almacena las mediciones en una base de datos **SQLite**.
 
